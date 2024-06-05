@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sign In</title>
+   <link rel="stylesheet" href="/style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+   <link rel="icon" type="image/x-icon" href="Computer_2.gif">
+</head>
+
+<body>
+   <div class="header">
+      <a href="/">
+         <h1 class="jersey logo">ZOOMLIKE</h1>
+      </a>
+      <img style="height: 35px; margin: 13px;" src="Computer_2.gif">
+   </div>
+
+   <div style="display: flex; flex-direction: column; justify-content: space-between; flex-wrap: wrap; height: 90vh; margin: 0 30px;">
+      <form id="create_form" style=" margin-top: 20px">
+         <h1 class="jersey" style="font-size: 50px; width: 280px; margin:10px 0 20px">Create meeting:</h1>
+         <div style="display: flex; flex-direction: row; gap: 50px;">
+            <div style="display: flex;">
+               <div>
+                  <h1 class="jersey" style="width: 130px">Room code:</h1>
+                  <input class="text_input" type="text" name="room_code" style="width: 320px" id="roomCode" readonly>
+               </div>
+               <button class="button-small jersey" style="padding: 4px 7px; margin: 45px 10px" type="button" id="generateRoomCode">↻</button>
+            </div>
+            <input class="button jersey" style="margin-top: 44px" type="submit" value="Create">
+         </div>
+      </form>
+
+      <div style="display: flex; color: white;">
+         <h1 class="jersey" style="display:inline">OR</h1>
+      </div>
+
+      <form id="join_form" style="margin-bottom: 90px" action="/join-room" method="post">
+         <h1 class="jersey" style="font-size: 50px; width: 230px; margin:10px 0 20px">Join meeting:</h1>
+         <div style="display: flex; flex-direction: row; gap: 50px;">
+            <div style="display: flex;">
+               <div>
+                  <h1 class="jersey" style="width: 130px">Room code:</h1>
+                  <input class="text_input" type="text" style="width: 320px" name="room_code" required>
+               </div>
+            </div>
+            <input class="button jersey" style="margin-top: 44px" type="submit" value="Join">
+         </div>
+      </form>
+
+      <img src="Cat.gif" style="height: 150px; width: 150px; position: absolute; top: 75vh; left: 85vw">
+   </div>
+
+   <script src="/home.js"></script>
+</body>
+</html>
+
+<style>
+   .jersey {
+   font-family: "Jersey 10", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+}
+
+.header{
+   height: 52px;
+   border-bottom: 2px solid white;
+   background: rgba(255, 255, 255, 0.2);
+   backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(5px);
+   display: flex;
+}
+
+.logo {
+   cursor: pointer;
+   color: white;
+   font-size: 50px;
+   margin: 0;
+   display: inline;
+   padding-left: 30px;
+}
+
+body{
+   color: white;
+}
+
+#video-grid {
+   gap: 20px;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, 400px);
+   grid-auto-rows: 300px;
+}
+   
+video {
+   margin: 0 30px;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+   border: 2px solid white;
+}   
+
+html{
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+body{
+  margin: 0;
+  background-color: rgb(43, 99, 250);
+}
+
+.button-small{
+   display: flex;
+   text-align: center;
+   color: white;
+   margin-top: 20px;
+   width: 40px;
+   height: 40px;
+   border: 1px solid white;
+   padding: 0 10px;
+   font-size: medium;
+   background: rgb(108, 113, 145);
+   font-size: 30px;
+}
+
+.button-small:hover{
+   text-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+   background: rgb(88, 89, 104);
+}
+
+.container{
+   color: white;
+   padding: 20px 30px 0px;
+   display: flex;
+   flex-direction: column;
+}
+
+.text_input {
+   display: inline;
+   color: white;
+   width: 150px;
+   height: 40px;
+   border: 1px solid white;
+   line-height: 30px;
+   padding: 0 10px;
+   font-size: medium;
+   background: rgba(255, 255, 255, 0.3);
+}
+
+.text_input.text_input:focus{
+   outline: none;
+   color: black;
+   background-color:  white;
+}
+
+.text_input:hover{
+   background: rgba(255, 255, 255, 0.5);
+}
+
+h1, h2, h3, h4, h5, h6{
+   margin: 5px 0;
+}
+
+.button{
+   color: white;
+   margin-top: 20px;
+   width: 170px;
+   height: 40px;
+   border: 1px solid white;
+   line-height: 30px;
+   padding: 0 10px;
+   font-size: medium;
+   background: rgb(108, 113, 145);
+   font-size: 30px;
+}
+
+.button:hover{
+   text-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+   background: rgb(88, 89, 104);
+}
+</style>

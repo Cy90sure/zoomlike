@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>ZOOMLIKE</title>
+   <script>
+     const ROOM_ID = "<%= roomId %>"
+   </script>
+   <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+   <script src="/socket.io/socket.io.js" defer></script>
+   <script src="script.js" defer></script>
+   <title>Document</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+   <link rel="icon" type="image/x-icon" href="Computer_2.gif">
+</head>
+
+<body>
+   <nav>
+      <div class="header">
+         <a href="/">
+            <h1 class="jersey logo">ZOOMLIKE</h1>
+         </a>
+         <img style="height: 35px; margin: 13px;" src="Computer_2.gif">
+      </div>  
+   </nav>
+
+   <div style="color: white; display: flex; margin: 5px 30px 0">
+      <h1 class="jersey" style="margin-right: auto;">Room Code: <%= roomId %></h1>
+   </div>
+
+  <div id="video-grid"></div>
+</body>
+</html>
+
+
+<style>
+   .jersey {
+   font-family: "Jersey 10", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+}
+
+.header{
+   height: 52px;
+   border-bottom: 2px solid white;
+   background: rgba(255, 255, 255, 0.2);
+   backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(5px);
+   display: flex;
+}
+
+.logo {
+   cursor: pointer;
+   color: white;
+   font-size: 50px;
+   margin: 0;
+   display: inline;
+   padding-left: 30px;
+}
+
+body{
+   color: white;
+}
+
+#video-grid {
+   gap: 20px;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, 400px);
+   grid-auto-rows: 300px;
+}
+   
+video {
+   margin: 0 30px;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+   border: 2px solid white;
+}   
+
+html{
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+body{
+  margin: 0;
+  background-color: rgb(43, 99, 250);
+}
+</style>
